@@ -1,0 +1,30 @@
+﻿@model demo_part2.Models.check_login
+@{
+    ViewData["Title"] = "Login Page";
+}
+<div class="text-center">
+
+    <!--form to register-->
+    <form method="post" asp-action="login_user">
+       
+        <label>Email:</label>
+        <input type="email" asp-for="email" />
+        <br />
+
+        <label>Select Role:</label>
+        <select asp-for="role">
+            <option selected disabled> select role here</option>
+            <option value="lecture">Lecture</option>
+            <option value="pm">PM</option>
+        </select>
+        <br />
+        <label>Password:</label>
+        <input type="password" asp-for="password" required />
+        <br />
+        <input type="submit" value="login now" />
+    </form>
+
+    <br />
+    <a href="/Home/Login">Don't have an account ?Register now!</a>
+
+</div>

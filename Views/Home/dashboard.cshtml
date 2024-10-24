@@ -1,0 +1,35 @@
+﻿using demo_part2.Models;
+@model demo_part2.Models.Claim
+@{
+    ViewData["Title"] = "Dashboard Page";
+}
+<a href = "/Home/view_claim">View Claims</a>
+<a href="/Home/Approve">Approve Claims</a>
+
+<br/><br/>
+<form method="post" asp-action="claim_sub" enctype="multipart/form-data">
+    <div>
+        <label for="module_name">Module Name</label>
+        <input type="text" asp-for="UserEmail" class="form-control" required />
+    </div>
+    <br />
+    <div>
+        <label for="hours_worked">Hours Worked</label>
+        <input type="text" asp-for="HoursWorked" class="form-control" required />
+    </div>
+    <br />
+    <div>
+        <label for="hour_rate">Hourly Rate</label>
+        <input type="text" asp-for="HourRate" class="form-control" required />
+    </div>
+    <div>
+        <label for="description">Description</label>
+       <textarea asp-for="Description" required></textarea>
+
+    </div>
+    <label>Upload File [option]</label>
+    <input type="file" name="File" />
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
